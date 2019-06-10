@@ -2,11 +2,11 @@ import random
 
 #PRINT THE BOARD
 def display_board(board):
-    print('{} | {} | {}'.format(board[0],board[1],board[2]))
+    print('{} | {} | {}'.format(board[7],board[8],board[9]))
     print('---------')
-    print('{} | {} | {}'.format(board[3],board[4],board[5]))
+    print('{} | {} | {}'.format(board[4],board[5],board[6]))
     print('---------')
-    print('{} | {} | {}'.format(board[6],board[7],board[8]))
+    print('{} | {} | {}'.format(board[1],board[2],board[3]))
 
 #ASSIGN A MARKER TO EACH PLAYER
 def player_input():
@@ -25,21 +25,21 @@ def place_marker(board,marker,position):
 
 #CHECKS IF A PLAYER HAS WON
 def win_check(board,mark):
-    if (board[0] == board[1] == board[2] == mark):
+    if (board[1] == board[2] == board[3] == mark):
         return True
-    elif (board[3] == board[4] == board[5] == mark):
+    elif (board[4] == board[5] == board[6] == mark):
         return True
-    elif (board[6] == board[7] == board[8] == mark):
+    elif (board[7] == board[8] == board[9] == mark):
         return True
-    elif (board[0] == board[3] == board[6] == mark):
+    elif (board[7] == board[4] == board[1] == mark):
         return True
-    elif (board[1] == board[4] == board[7] == mark):
+    elif (board[8] == board[5] == board[2] == mark):
         return True
-    elif (board[2] == board[5] == board[8] == mark):
+    elif (board[9] == board[6] == board[3] == mark):
         return True
-    elif (board[0] == board[4] == board[8] == mark):
+    elif (board[7] == board[5] == board[3] == mark):
         return True
-    elif (board[2] == board[4] == board[6] == mark):
+    elif (board[9] == board[5] == board[1] == mark):
         return True
     else:
         return False
@@ -80,7 +80,7 @@ print('Welcome to Tic Tac Toe')
 
 while(True):
     #Clean board
-    board = [' ']*9
+    board = [' ']*10
 
     #Choose marker
     print('Choose player 1 marker')
