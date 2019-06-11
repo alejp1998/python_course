@@ -114,7 +114,6 @@ while(True):
         display_board(board)
 
         if(win):
-
             print('PLAYER {} WON!'.format(turn))
             game_on = False
         elif(full_board_check(board)):
